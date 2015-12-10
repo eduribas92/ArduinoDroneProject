@@ -1,0 +1,19 @@
+I do not take full cred for the code, it is written by me but using bits of code found in examples from other
+projects online.
+
+You can find the libraries needed in the folder "libraries". 
+
+
+
+Important note: for faster ESC-response, I recommend editing your "servo.h" library and changing the
+value of 
+
+#define REFRESH_INTERVAL    6000     // minumim time to refresh 
+
+The original setting is 20000 (microseconds), this only lets the esc:s update at 50Hz.  Change value to
+something like 6000 and you can update at 167 Hz. This makes the quad more stable and agile. 
+
+
+Enjoy!
+
+/Josef Holmner

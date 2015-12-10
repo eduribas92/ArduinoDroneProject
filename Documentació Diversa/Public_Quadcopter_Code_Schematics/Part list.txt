@@ -1,0 +1,6 @@
+Motors: 4x FC 28-22 (1200kv)
+ESC: 4x Hobbyking SS Series 15-18A ESC
+Battery: 2x ZIPPY Compact 3700mAh 3S 25C
+Props: 4x  10x4.5 SF Props 2CW+2CCW
+Radio-controller: Hobby King 2.4Ghz 6Ch V2 
+
