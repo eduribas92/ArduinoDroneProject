@@ -54,8 +54,9 @@ void loop(){
   
   val = distance;
   // Convert the string to an integer
-  Serial.println(val);
-  if (val > -1 && val < 47)
+  
+  if (val > -1 && val < 100)
+    Serial.println(val);
     myMotor.write(val);
 
     delay(100);

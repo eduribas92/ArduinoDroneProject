@@ -18,7 +18,7 @@ String incomingString;
 void setup()
 {
   // Put the motor to Arduino pin #9
-  myMotor.attach(9);
+  myMotor.attach(10);
 
   // Required for I/O from Serial monitor
   Serial.begin(9600);

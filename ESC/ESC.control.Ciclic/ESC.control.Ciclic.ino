@@ -11,8 +11,8 @@
 
 // This is our motor.
 Servo myMotor;
-int increment = 2;
-int val = 0;
+int increment = 0;
+int val = 4;
 
 // Set everything up
 void setup()
@@ -32,9 +32,9 @@ void loop(){
   val = val + increment;
   // Convert the string to an integer
   Serial.println(val);
-  if (val > -1 && val < 40)
+  if (val > -1 && val < 100)
     myMotor.write(val);
-  if( val == 40 || val == 0)
+  if( val == 100 || val == 0)
     increment = -increment;
 
     delay(500);
