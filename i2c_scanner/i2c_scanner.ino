@@ -1,3 +1,5 @@
+#include <Wire.h>
+
 // --------------------------------------
 // i2c_scanner
 //
@@ -54,9 +56,11 @@ void loop()
     // the Write.endTransmisstion to see if
     // a device did acknowledge to the address.
     Wire.beginTransmission(address);
-    Serial.println(".\n");
+    Serial.println("0");
     error = Wire.endTransmission();
+    Serial.println("1");
     Serial.println(error);
+    Serial.println();
     
     if (error == 0)
     {

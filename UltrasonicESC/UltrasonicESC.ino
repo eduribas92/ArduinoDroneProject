@@ -52,7 +52,7 @@ void loop(){
   int distance = pulseIn(inputPin, HIGH);  // Read receiver pulse time
   distance= distance/58;   // Transform pulse time to distance
   
-  val = distance;
+  val = distance / 2;
   // Convert the string to an integer
   
   if (val > -1 && val < 100)
