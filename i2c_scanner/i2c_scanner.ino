@@ -50,14 +50,15 @@ void loop()
   Serial.println("Scanning...");
 
   nDevices = 0;
-  for(address = 100; address < 110; address++ ) 
+  for(address = 101; address < 120; address++ ) 
   {
+    boolean boolea = false;
     // The i2c_scanner uses the return value of
     // the Write.endTransmisstion to see if
     // a device did acknowledge to the address.
     Wire.beginTransmission(address);
-    Serial.println("0");
-    error = Wire.endTransmission();
+    Serial.println(address);
+    error = Wire.endTransmission(boolea);
     Serial.println("1");
     Serial.println(error);
     Serial.println();
