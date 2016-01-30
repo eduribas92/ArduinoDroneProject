@@ -47,7 +47,7 @@ THE SOFTWARE.
 // AD0 low = 0x68 (default for InvenSense evaluation board)
 // AD0 high = 0x69
 //MPU6050 accelgyro;
-MPU6050 accelgyro(0x69); // <-- use for AD0 high
+MPU6050 accelgyro(0x68); // <-- use for AD0 high
 
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
@@ -150,4 +150,5 @@ void loop() {
   // blink LED to indicate activity
   blinkState = !blinkState;
   digitalWrite(LED_PIN, blinkState);
+  delay(500);
 }

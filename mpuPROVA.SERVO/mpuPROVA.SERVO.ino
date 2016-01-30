@@ -21,19 +21,31 @@ void setup()
     Serial.println("Initialize MPU");
     mpu.initialize();
     Serial.println(mpu.testConnection() ? "Connected" : "Connection failed");
+
     myservo.attach(9);
+    
+    val = 0;
+    Serial.println(val);
+    myservo.write(val);
+    delay(3000);
+    
+    val = 10;
+    Serial.println(val);
+    myservo.write(val);
+    delay(1000);
 }
  
 void loop() 
 {
     mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
  
-    val = map(ay, -17000, 17000, 0, 179);
+    val = map(gz, -17000, 17000, 0, 35);
     if (val != prevVal)
     {
+        Serial.print(gz); Serial.print("\t"); Serial.println(val);
         myservo.write(val);
         prevVal = val;
     }
  
-    delay(50);
+    delay(500);
 }
