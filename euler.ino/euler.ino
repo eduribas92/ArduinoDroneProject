@@ -18,14 +18,12 @@
 MPU6050 accelgyro(0x68); // <-- use for AD0 high
 
 int16_t ax0, ay0, az0;
-
 int16_t ax1, ay1, az1;
-int16_t ax, ay, az;
-int16_t vx=0, vy=0, vz=0;
-int16_t px=0, py=0, pz=0;
-int16_t gx=0, gy=0, gz=0;
-int16_t ptime, dtime;
+double ax=0, ay=0, az=0;
+double vx=0, vy=0, vz=0;
+double px=0, py=0, pz=0;
 
+int16_t ptime, dtime;
 
 // uncomment "OUTPUT_READABLE_ACCELGYRO" if you want to see a tab-separated
 // list of the accel X/Y/Z and then gyro X/Y/Z values in decimal. Easy to read,
