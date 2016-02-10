@@ -111,7 +111,7 @@ void loop()
 		Serial.print("a=\t");Serial.print(ax, 2);Serial.print("\t");Serial.print(ay, 2);Serial.print("\t");Serial.print(az, 2);Serial.println("\t");
 		Serial.print("v=\t");Serial.print(vx, 2);Serial.print("\t");Serial.print(vy, 2);Serial.print("\t");Serial.print(vz, 2);Serial.println("\t");
 		Serial.print("p=\t");Serial.print(px, 2);Serial.print("\t");Serial.print(py, 2);Serial.print("\t");Serial.print(pz, 2);Serial.println("\t");
-		Serial.println("-----------------------------------------------------")
+		Serial.println("-----------------------------------------------------");
 		tcycle=millis();
 	}
 }
