@@ -1,2 +1,1 @@
-# ArduinoDroneProject
-An Arduino quadcopter drone project
+# Arduino Drone Project
