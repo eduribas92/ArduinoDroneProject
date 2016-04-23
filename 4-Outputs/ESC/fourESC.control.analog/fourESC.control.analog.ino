@@ -1,25 +1,17 @@
 #include <Servo.h>
 
-Servo ESC1;
-Servo ESC2;
-Servo ESC3;
-Servo ESC4;
+Servo ESC1, ESC2, ESC3, ESC4;
 
-int value = 0;
-int value1 = 0;
-int value2 = 0;
-int value3 = 0;
-int value4 = 0;
-const int max_value = 70;
-const int min_value = 0;
+int value = 0, value1 = 0, value2 = 0, value3 = 0, value4 = 0;
+const int max_value = 70, min_value = 0;
 
 const int pinButtonInc = 13, pinButtonDec = 12;
 int stateButtonInc = 0, stateButtonDec = 0;
 unsigned long timeButtonPressed = 0;
 const int precision = 200; // (ms)
 
-int value_pot_1_3 = 0;
-int value_pot_2_4 = 0;
+const int pinPot_1_3 = 0, pinPot_2_4 = 1;
+int valuePot_1_3 = 0, valuePot_2_4 = 0;
 
 
 void setup(){
@@ -48,15 +40,15 @@ void loop(){
     if( stateButtonDec == HIGH ) value = max( value-1, min_value );
   }
 
-  value_pot_1_3 = map(analogRead(A0), 0, 1023, -5, 5);
-  value_pot_2_4 = map(analogRead(A1), 0, 1023, -5, 5);
+  valuePot_1_3 = map(analogRead(pinPot_1_3), 0, 1023, -5, 5);
+  valuePot_2_4 = map(analogRead(pinPot_2_4), 0, 1023, -5, 5);
 
   // potser cal canviar aquests signes
   // aquests valors poden sortir del rang min-max establert
-  value1 = value + value_pot_1_3;
-  value2 = value + value_pot_2_4;
-  value3 = value - value_pot_1_3;
-  value4 = value - value_pot_2_4;
+  value1 = value + valuePot_1_3;
+  value2 = value + valuePot_2_4;
+  value3 = value - valuePot_1_3;
+  value4 = value - valuePot_2_4;
   
   ESC1.write(value1);
   ESC2.write(value2);
