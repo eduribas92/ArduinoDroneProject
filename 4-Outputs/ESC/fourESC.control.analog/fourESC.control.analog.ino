@@ -3,7 +3,7 @@
 Servo ESC1, ESC2, ESC3, ESC4;
 
 int value = 0, value1 = 0, value2 = 0, value3 = 0, value4 = 0;
-const int max_value = 70, min_value = 0;
+const int max_value = 90, min_value = 0;
 
 const int pinButtonInc = 13, pinButtonDec = 12;
 int stateButtonInc = 0, stateButtonDec = 0;
@@ -24,7 +24,7 @@ void setup(){
   pinMode(pinButtonInc, INPUT);
   pinMode(pinButtonDec, INPUT);
 
-  Serial.begin(38400);
+  Serial.begin(9600);
   Serial.println("initializing");
   
 }
@@ -36,13 +36,13 @@ void loop(){
     timeButtonPressed = millis();
     stateButtonInc = digitalRead(pinButtonInc);
     stateButtonDec = digitalRead(pinButtonDec);
-    if( stateButtonInc == HIGH ) value = min( value+1, max_value );
-    if( stateButtonDec == HIGH ) value = max( value-1, min_value );
+    if( stateButtonInc == HIGH ) value = min( value+3, max_value );
+    if( stateButtonDec == HIGH ) value = max( value-3, min_value );
   }
 
   valuePot_1_3 = map(analogRead(pinPot_1_3), 0, 1023, -5, 5);
   valuePot_2_4 = map(analogRead(pinPot_2_4), 0, 1023, -5, 5);
-
+  
   // potser cal canviar aquests signes
   // aquests valors poden sortir del rang min-max establert
   value1 = value + valuePot_1_3;
@@ -50,6 +50,14 @@ void loop(){
   value3 = value - valuePot_1_3;
   value4 = value - valuePot_2_4;
   
+  Serial.print(value1);
+  Serial.print("\t");
+  Serial.print(value2);
+  Serial.print("\t");
+  Serial.print(value3);
+  Serial.print("\t");
+  Serial.print(value4);
+  Serial.print("\n");
   ESC1.write(value1);
   ESC2.write(value2);
   ESC3.write(value3);
