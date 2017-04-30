@@ -9,8 +9,8 @@ bool new_value = true;
 // ESC variables
 Servo ESC1, ESC2, ESC3, ESC4;
 int ESC1_pin = 6, ESC2_pin = 9, ESC3_pin = 10, ESC4_pin = 11;
-int ESC_value = 0, ESC1_value = 0, ESC2_value = 0, ESC3_value = 0, ESC4_value = 0;
-const int ESC_max_value = 90, ESC_min_value = 0;
+int ESC_value = 20, ESC1_value = 20, ESC2_value = 20, ESC3_value = 20, ESC4_value = 20;
+const int ESC_max_value = 180, ESC_min_value = 0;
 
 
 //----------------------------------------------------------------------------------
